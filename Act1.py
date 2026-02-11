@@ -100,7 +100,7 @@ if __name__ == "__main__":
     print(f"Listado de alumnos para el profesor de {profesor.nombreAsignatura}:")
     print("-" * 60)
     
-    # Mostrar listado [cite: 85]
+    # Mostrar listado 
     for alum in profesor.alumnos:
         print(f"Alumno: {alum.nombre} {alum.apellidos}")
         print(f"  - Nota Media: {alum.getNotaMedia():.2f}")

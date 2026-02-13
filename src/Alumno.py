@@ -20,13 +20,4 @@ class Alumno(Persona):
         if not self.asignaturas: return 0.0
         return sum(nota for _, nota in self.asignaturas) / len(self.asignaturas) 
 
-    def aplicar_bonus_aprobados(self):
-        nuevas_asignaturas = []
-        for asig, nota in self.asignaturas:
-            if nota >= 5.0:
-                nueva_nota = min(10.0, nota + 1.0)
-                nuevas_asignaturas.append((asig, nueva_nota))
-            else:
-                nuevas_asignaturas.append((asig, nota))
-        
-        self.asignaturas = nuevas_asignaturas
+    

@@ -94,8 +94,7 @@ if __name__ == "__main__":
     # 4. Sumar 1 punto a las asignaturas aprobadas
     print("\n4. APLICANDO BONUS (+1 PUNTO) A LOS APROBADOS...")
     
-    for alu in profesor.alumnos:
-        alu.aplicar_bonus_aprobados() 
+    profesor.aplicar_bonus_aprobados() 
         
     print("   ¡Bonus aplicado correctamente a todos los alumnos!")
 

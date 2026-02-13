@@ -45,3 +45,21 @@ class Profesor(Persona):
         if not edades: return 0.0
         return sum(edades) / len(edades)
     
+    def aplicar_bonus_aprobados(self):
+        # 1. El profesor recorre su lista completa de alumnos
+        for alumno in self.alumnos:
+            # Creamos una lista temporal para las nuevas notas de ESTE alumno
+            nuevas_notas_alumno = []
+            
+            # 2. Recorremos las asignaturas de este alumno en concreto
+            for asig, nota in alumno.asignaturas:
+                if nota >= 5.0:
+                    # Aplicamos el bonus sin pasar de 10.0
+                    nueva_nota = min(10.0, nota + 1.0)
+                    nuevas_notas_alumno.append((asig, nueva_nota))
+                else:
+                    # Si está suspenso, mantenemos la nota original
+                    nuevas_notas_alumno.append((asig, nota))
+            
+            # 3. Actualizamos el expediente del alumno con la nueva lista
+            alumno.asignaturas = nuevas_notas_alumno
